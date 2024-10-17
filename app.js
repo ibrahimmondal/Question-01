@@ -29,31 +29,6 @@ function showItem (user) {
 )};
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // search start 
 const searchCocktail = document.getElementById("input")
 function fetchCocktail () {
