@@ -1,17 +1,32 @@
 function fetchApi () {
     fetch("https://thecocktaildb.com/api/json/v1/1/search.php?f=a")
     .then((res) => res.json())
-    .then((item) => showItem(item));
+    .then((item) => console.log
+    (item));
 }
 
 fetchApi ();
 
 function showItem (user) {
     // console.log(user);
-    user.forEach(user) = console.log(user)
-    
-    
-}
+    user.forEach((user) => console.log(user)
+    //  document.getElementById("user-box").innerHTML += 
+    // `
+    // <div class=" grid grid-cols-3 gap-5 mt-4">
+    //   <div class="Cocktail-box border border-gray-300">
+    //      <img src=${user.strDrinkThumb} alt="">
+    //     <div class="p-3"> 
+    //      <h3 class="text-white text-[20px]">${user.strAlcoholic}</h3>
+    //      <p class="text-[15px] text-white my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque magni quas ea hic, voluptatem molestias!</p>
+    //      <div class="my-5">
+    //        <a href="#" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded">Watch</a>
+    //      <a href="#" class="text-white ml-3">View Cocktail</a>
+    //      </div>
+    //     </div>
+    //   </div>
+    // </div>
+    // `
+)};
 
 
 
