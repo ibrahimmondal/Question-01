@@ -1,32 +1,36 @@
 function fetchApi () {
     fetch("https://thecocktaildb.com/api/json/v1/1/search.php?f=a")
     .then((res) => res.json())
-    .then((item) => console.log
-    (item));
-}
+     .then((item) =>  showItem(item.drinks)    
+)}
 
 fetchApi ();
 
-function showItem (user) {
-    // console.log(user);
-    user.forEach((user) => console.log(user)
-    //  document.getElementById("user-box").innerHTML += 
-    // `
-    // <div class=" grid grid-cols-3 gap-5 mt-4">
-    //   <div class="Cocktail-box border border-gray-300">
-    //      <img src=${user.strDrinkThumb} alt="">
-    //     <div class="p-3"> 
-    //      <h3 class="text-white text-[20px]">${user.strAlcoholic}</h3>
-    //      <p class="text-[15px] text-white my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque magni quas ea hic, voluptatem molestias!</p>
-    //      <div class="my-5">
-    //        <a href="#" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded">Watch</a>
-    //      <a href="#" class="text-white ml-3">View Cocktail</a>
-    //      </div>
-    //     </div>
-    //   </div>
-    // </div>
-    // `
-)};
+function showItem (user = [] ) { 
+   if (user.length > 0) {
+    user.slice(0, 12).forEach((user) => { 
+        console.log(user);
+          
+        document.getElementById("user-box").innerHTML += `
+         <div class="border border-gray-300">
+            <img src=${user.strDrinkThumb} alt="">
+           <div class="p-3"> 
+            <h3 class="text-white text-[20px]">${user.strDrink}</h3>
+            <p class="text-[15px] text-white my-3">${user.strInstructions.slice(0, 90)}...</p>
+            <div class="my-5">
+              <a href="#" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded">Watch</a>
+            <a href="#" class="text-white ml-3">View Cocktail</a>
+            </div>
+           </div>
+         </div>
+        `
+    })
+   }
+};
+
+
+
+
 
 
 // // search start 
@@ -78,6 +82,7 @@ function showMoreDetails (cocktail){
 //    details.classList.add("invisible")
    details.innerHTML = `
     <div class="bg-white rounded-lg p-6 w-[50%] md:flex-col md:flex">
+     <img src=${cocktail.strDrinkThumb} alt="">
         <h2 class="text-lg font-bold">${cocktail.strDrink}</h2>
         <p class="mt-2">${cocktail.strInstructions}</p>
         <div class="mt-4 flex justify-start">
